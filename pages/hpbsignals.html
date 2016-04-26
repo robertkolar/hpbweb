@@ -1,0 +1,60 @@
+---
+layout: page
+title: HPB Signals
+permalink: /hpbsignals/
+---
+
+<img style="float: right; width: 218px; height: 318px;" src="/resources/images/hpbsignals_box.png" alt="HPB Signals Image" >
+
+<div style="margin-bottom: 20px;">
+    For traders who use Interactive Brokers
+    <a href="http://www.interactivebrokers.com/en/p.php?f=tws&amp;ib_entity=llc" target="_blank">TWS or IB Gateway platform</a>
+    and need to automatically enter IB trades as C2 signals into
+    <a href="http://www.collective2.com/" target="_blank">Collective2</a>
+    platform. HighPowerBear is InteractiveBrokers
+    <a href="http://www.interactivebrokers.com/en/general/poll/ibconsultants.php?accept_disclaimer=T&amp;ib_entity=llc" target="_blank">Technology Partner</a>
+    (listed under The Marketplace@IB --&gt; Software Tools --&gt; Order Management Software).
+</div>
+
+<a href="http://webdoc.highpowerbear.com/hpbsignals" target="_blank">Online Manual</a><br>
+<a href="/hpbsignals/screenshots">Screenshots</a><br>
+
+<h3 style="margin-top: 50px;">Requirements</h3>
+<ul style="list-style-type: disc; margin-top: 0px; margin-left: 5px;">
+    <li>You need to have a trading system hosted on the Collective2 site</li>
+    <li>You need to have an Interactive Brokers trading account with TWS or IB Gateway running</li>
+    <li>Make sure that IB is configured to accept socket connections: '<span style="color: green;">Edit--&gt;Global Configuration--&gt;API--&gt;Settings--&gt;Enable ActiveX and Socket Clients</span>'</li>
+    <li>Make sure that IB setting '<span style="color: green;">Edit--&gt;Global Configuration--&gt;API--&gt;Settings--&gt;Download open orders on connection</span>' is checked</li>
+    <li>Make sure that IB setting '<span style="color:green;">Edit--&gt;Global Configuration--&gt;API--&gt;Settings--&gt;Master API client ID</span>' is set to 0</li>
+    <li>HPBSignals connects to IB using client id = 0, so no other IB API application can use that client id at the same time</li>
+    <li>It is recommended to install the latest TWS or IB Gateway</li>
+    <li>Any operating system with Java 7.x installed is supported. You can download Java <a href="http://www.java.com/en/download/index.jsp" target="_blank">here</a></li>
+</ul>
+<h3>Features</h3>
+<ul style="list-style-type: disc; margin-top: 0px; margin-left: 5px;">
+    <li><span style="color: green;">Instruments supported: </span>stocks, options, futures, forex - US markets</li>
+    <li><span style="color: green;">Order types supported: </span>market, limit, stop</li>
+    <li><span style="color: green;">Conditional orders: </span>a child order is submitted only after a parent is executed</li>
+    <li><span style="color: green;">OCA orders: </span>one cancels all orders are grouped together into an OCA group</li>
+    <li><span style="color: green;">Financial advisor IB account selection: </span>process orders from the selected IB account or from all IB accounts</li>
+    <li><span style="color: green;">Order price update detection: </span>detect an IB order price update and enable a matching C2 signal replacement</li>
+    <li><span style="color: green;">Instrument type based filtering: </span>instrument type can be selected or unselected for processing</li>
+    <li><span style="color: green;">Order quantity scaling: </span>a C2 signal (order) quantity can be scaled from 1% (1/100) up to 10000% (100x)</li>
+    <li><span style="color: green;">Reversal order management: </span>reversal signals can be enabled or disabled</li>
+    <li><span style="color: green;">Automatic retransmission: </span>adaptive algorithm for automatic retransmission of C2 signals (up to giveup time) in case of a failure condition</li>
+    <li><span style="color: green;">IB connection monitoring: </span>automatic reconnection in case of a connection loss</li>
+    <li><span style="color: green;">C2 signal actions: </span>dynamically determines the correct action based on a C2 position</li>
+    <li><span style="color: green;">Signal duration: </span>DAY, GTC- good till cancelled</li>
+    <li><span style="color: green;">IB Order and C2 Signal status monitoring: </span>submitted - working, filled, cancelled, expired</li>
+    <li><span style="color: green;">IB events and IB to C2 conversion events window: </span>displaying IB order status transitions and IB to C2 conversion status transitions</li>
+    <li><span style="color: green;">Signal details window: </span>status, date posted, date emailed, date expired, date killed, date traded, trade price, scaling pct</li>
+    <li><span style="color: green;">Login process: </span>a list of available C2 systems is provided for the selection</li>
+    <li><span style="color: green;">Embedded SQL database: </span>all IB orders and C2 signals that are processed by HPB Signals are permanently stored in a database</li>
+    <li><span style="color: green;">IB order tab: </span>IB orders are displayed according to specified filter criteria</li>
+    <li><span style="color: green;">C2 signal tab: </span>C2 signals are displayed according to specified filter criteria</li>
+    <li><span style="color: green;">Service status monitoring: </span>IB connection and services status is visually displayed in the status bar</li>
+    <li><span style="color: green;">Third party IB clients supported: </span>listens for orders from third party IB clients like Ninja Trader, Bracket Trader, etc.</li>
+    <li><span style="color: green;">Database backup and export: </span>on demand database backup (binary backup) or database tables export (csv text export)</li>
+    <li><span style="color: green;">Export into CSV: </span>C2 signals and IB orders can be exported into CSV file (Excel)</li>
+</ul>
+

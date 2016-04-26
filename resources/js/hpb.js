@@ -26,11 +26,9 @@ var Hpb = (function() {
         $('#' + chartLinkId).attr('href', imgSrc);
 
         $('#' + chartImageId).css('cursor', 'wait').on('load', function () {
-            setTimeout(function () {
-                console.log('loaded');
-                $('.hpb-button').css('cursor', 'pointer').removeClass('disabled');
-                $('#' + chartImageId).css('cursor', 'pointer').off('load');
-            }, 1000);
+            console.log('loaded');
+            $('.hpb-button').css('cursor', 'pointer').removeClass('disabled');
+            $('#' + chartImageId).css('cursor', 'pointer').off('load');
         }).attr('src', imgSrc);
         return true;
     };
