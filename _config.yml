@@ -1,0 +1,47 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Your awesome title
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+permalink: /:categories/:short_year:month:day/
+url: "http://localhost:4000"
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      author: highpowerbear
+      category: market
+      layout: post
+      default-interval: daily
+      image-suffix: "png"
+      tags: [bearish, bonds, bullish, candlesticks, commodity, etf, euro, gold, market, oil, resistance, stochastic, stocks, support, trendline]
+symbols: {
+  SPY: "SPY - S&P 500 ETF",
+  TLT: "TLT - Treasury Bond ETF",
+  GLD: "GLD - Gold ETF",
+  WTIC: "WTIC - Light Crude Oil Spot",
+
+  EURUSD: "EURUSD - Euro to US Dollar",
+  AUDUSD: "AUDUSD - Australian Dollar to US Dollar",
+  GBPUSD: "GBPUSD - British Pound to US Dollar",
+  USDCAD: "USDCAD - US Dollar to Canadian Dollar",
+  USDJPY: "USDJPY - US Dollar to Japanese Yen"
+}
+
+# Build settings
+markdown: kramdown

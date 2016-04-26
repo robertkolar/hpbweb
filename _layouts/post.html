@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<h5 class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d,
+                %Y" }}
+            </time>
+            {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                itemprop="name">{{ page.author }}</span></span>{% endif %}
+        </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+    {% capture chart-folder %}/charts/{{page.charts-ymd | slice: 0, 2}}/{{page.charts-ymd | slice: 2, 2}}/{{page.charts-ymd | slice: 4, 2}}{% endcapture %}
+
+    {% for symbol in page.symbols %}
+        <div style="margin-bottom: 30px;">
+            {% assign s = symbol[0] %}
+            <div class="hpb-header" style="margin-bottom: 20px;">{{site.symbols[s]}}</div>
+            <div style="margin-top: 0px; margin-bottom: 10px;">
+            {% for interval in symbol[1] %}
+                {% capture button-id %}button-{{symbol[0]}}-{{page.charts-ymd}}-{{interval[0]}}-{{page.image-suffix}}{% endcapture %}
+                <span id="{{button-id}}" class="hpb-button" title="Click to view {{interval[0]}} chart">{{interval[0]}}</span>
+                <span class="hpb-sentiment-{{interval[1]}}" style="margin-right: 50px;">{{interval[1]}}</span>
+            {% endfor %}
+            </div>
+            {% capture chartlink-id %}chartlink-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}
+            {% capture chartimage-id %}chartimage-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}
+            {% capture img-src %}{{chart-folder}}/{{symbol[0]}}_{{page.charts-ymd}}_{{page.default-interval}}.{{page.image-suffix}}{% endcapture %}
+            <a id="{{chartlink-id}}" href="{{img-src}}" target="_blank" style="border-bottom-style: none;">
+                <img id="{{chartimage-id}}" src="{{img-src}}" title="Click to view high resolution chart"/>
+            </a>
+        </div>
+    {% endfor %}
+
+    <div class="hpb-tags">Posted in {{page.category}} and tagged {% for tag in page.tags %}{{tag}}, {% endfor %}...</div>
+</article>

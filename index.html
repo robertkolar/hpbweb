@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="home">
+
+    <h1 class="page-heading">Recent Posts</h1>
+
+    <div class="post-list">
+        {% for post in site.posts limit:4 %}
+            {% capture chart-folder %}/charts/{{post.charts-ymd | slice: 0, 2}}/{{post.charts-ymd | slice: 2, 2}}/{{post.charts-ymd | slice: 4, 2}}{% endcapture %}
+
+            <div style="float: left; margin-right: 10px;">
+                <a href="{{ post.url | prepend: site.baseurl }}"><span class="post-meta">{{ post.title }}</span></a>
+
+                <h2>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                        <img src="{{chart-folder}}/{{post.thumb-image[0]}}_{{post.charts-ymd}}_{{post.thumb-image[1]}}.{{post.image-suffix}}" style="width: 200px; height: 140px;"/>
+                    </a>
+                </h2>
+            </div>
+            {% endfor %}
+            <div style="clear: left;"></div>
+    </div>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>
