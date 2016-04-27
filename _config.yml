@@ -31,10 +31,13 @@ defaults:
       image-suffix: "png"
       tags: [bearish, bonds, bullish, candlesticks, commodity, etf, euro, gold, market, oil, resistance, stochastic, stocks, support, trendline]
 symbols: {
-  SPY: "SPY - S&P 500 ETF",
-  TLT: "TLT - Treasury Bond ETF",
-  GLD: "GLD - Gold ETF",
+  SPY:  "SPY - S&P 500 ETF",
+  TLT:  "TLT - Treasury Bond ETF",
+  GLD:  "GLD - Gold ETF",
+  USO:  "USO - Crude Oil ETF",
   WTIC: "WTIC - Light Crude Oil Spot",
+  FXE:  "FXE - Euro Currency ETF",
+  DBA:  "DBA - Agriculture ETF",
 
   EURUSD: "EURUSD - Euro to US Dollar",
   AUDUSD: "AUDUSD - Australian Dollar to US Dollar",
