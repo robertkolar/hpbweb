@@ -4,8 +4,16 @@
 {% include head.html %}
     <body>
         {% include header.html %}
-        <div>
-            {{ content }}
+        <div class="container">
+          <!-- Content -->
+          <div class="col-md-10" style="background-color: blue;">
+              {{ content }}
+          </div> <!-- End of Content -->
+
+          <!-- Sidebar -->
+          <div class="col-md-2" style="background-color: green;">
+            Test
+          </div> <!-- End of Sidebar -->
         </div>
         {% include footer.html %}
     </body>
