@@ -20,13 +20,21 @@ layout: default
     {% for symbol in page.symbols %}
         <div style="margin-bottom: 30px;">
             {% assign s = symbol[0] %}
-            <div class="hpb-header" style="margin-bottom: 20px;">{{site.symbols[s]}}</div>
+            <div style="margin-bottom: 20px;">{{site.symbols[s]}}</div>
             <div style="margin-top: 0px; margin-bottom: 10px;">
-            {% for interval in symbol[1] %}
-                {% capture button-id %}button-{{symbol[0]}}-{{page.charts-ymd}}-{{interval[0]}}-{{page.image-suffix}}{% endcapture %}
-                <span id="{{button-id}}" class="hpb-button" title="Click to view {{interval[0]}} chart">{{interval[0]}}</span>
-                <span class="hpb-sentiment-{{interval[1]}}" style="margin-right: 50px;">{{interval[1]}}</span>
-            {% endfor %}
+                <ul class="nav nav-pills">
+                    {% for interval in symbol[1] %}
+                    {% capture button-id %}button-{{symbol[0]}}-{{page.charts-ymd}}-{{interval[0]}}-{{page.image-suffix}}{% endcapture %}
+                    {% if interval[0] == page.default-interval %}
+                        {% assign isactive = 'active' %}
+                    {% else %}
+                        {% assign isactive = '' %}
+                    {% endif %}
+                    <li id="{{button-id}}" title="Click to view {{interval[0]}} chart" role="presentation" class="hpb-button hpb-sentiment {{interval[1]}} {{isactive}}">
+                        <a href="javascript:void(0);">{{interval[0]}}: {{interval[1]}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
             {% capture chartlink-id %}chartlink-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}
             {% capture chartimage-id %}chartimage-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}
@@ -37,5 +45,5 @@ layout: default
         </div>
     {% endfor %}
 
-    <div class="hpb-tags">Posted in {{page.category}} and tagged {% for tag in page.tags %}{{tag}}, {% endfor %}...</div>
+    <div>Posted in {{page.category}} and tagged {% for tag in page.tags %}{{tag}}, {% endfor %}...</div>
 </article>

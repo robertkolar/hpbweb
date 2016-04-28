@@ -5,75 +5,28 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
 
-.hpb-header {
-    color: SlateGray;
-    font-size: 16px;
-}
 
-.hpb-tags {
-    color: SlateGray;
-    font-size: 12px;
-}
+$hpb-color-bullish: green;
+$hpb-color-bearish: red;
+$hpb-color-neutral: gray;
 
-.hpb-button {
-    -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
-    -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
-    box-shadow: 0px 1px 0px 0px #f0f7fa;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
-    background: -moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-    background: -webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-    background: -o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-    background: -ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-    background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2', GradientType=0);
-    background-color: #33bdef;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    border: 1px solid #057fd0;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: arial;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 2px 6px;
-    text-decoration: none;
-    text-shadow: 0px -1px 0px #5b6178;
-}
-
-.hpb-button.disabled {
-    background: #d0d0d0;
-}
-
-.hpb-button.disabled:hover {
-    background: #d0d0d0;
-}
-
-.hpb-button:hover {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
-    background: -moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-    background: -webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-    background: -o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-    background: -ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-    background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef', GradientType=0);
-    background-color: #019ad2;
-}
-
-.hpb-button:active {
-    position: relative;
-    top: 1px;
-}
-
-.hpb-sentiment-bullish {
-    color: Green;
-}
-
-.hpb-sentiment-bearish {
-    color: Red;
-}
-
-.hpb-sentiment-neutral {
-    color: Gray;
+li.hpb-sentiment {
+    &.bullish {
+        a {color: $hpb-color-bullish;}
+        &.active {
+            a {color: white; background-color: $hpb-color-bullish;}
+        }
+    }
+    &.bearish {
+        a {color: $hpb-color-bearish;}
+        &.active {
+            a {color: white; background-color: darken($hpb-color-bearish, 20%);}
+        }
+    }
+    &.neutral {
+        a {color: $hpb-color-neutral;}
+        &.active {
+            a {color: white; background-color: $hpb-color-neutral;}
+        }
+    }
 }

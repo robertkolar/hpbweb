@@ -3,9 +3,7 @@
  */
 $(document).ready(function() {
     $('.hpb-button').click(function () {
-        if (!$(this).hasClass('disabled')) {
-            Hpb.swapImage($(this).attr('id'));
-        }
+        Hpb.swapImage($(this).attr('id'));
     });
 });
 
@@ -22,13 +20,11 @@ var Hpb = (function() {
         var chartImageId = 'chartimage-' + symbol + '-' + ymd;
         var imgSrc = '/charts/' + ymd.substr(0, 2) + '/' + ymd.substr(2, 2) + '/' + ymd.substr(4, 2) + '/' + symbol + '_' + ymd + '_' + interval + '.' + suffix;
 
-        $('.hpb-button').css('cursor', 'wait').addClass('disabled');
         $('#' + chartLinkId).attr('href', imgSrc);
-
-        $('#' + chartImageId).css('cursor', 'wait').on('load', function () {
+        $('#' + chartImageId).on('load', function () {
             console.log('loaded');
-            $('.hpb-button').css('cursor', 'pointer').removeClass('disabled');
-            $('#' + chartImageId).css('cursor', 'pointer').off('load');
+            $('#' + buttonId).addClass('active').siblings().removeClass('active');
+            $('#' + chartImageId).off('load');
         }).attr('src', imgSrc);
         return true;
     };
