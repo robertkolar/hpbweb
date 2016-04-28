@@ -9,6 +9,10 @@
 $hpb-color-bullish: green;
 $hpb-color-bearish: red;
 $hpb-color-neutral: gray;
+$hpb-color-github: #333;
+$hpb-color-github-hover: #4078c0;
+$hpb-color-twitter: #00aced;
+$hpb-color-rss: #ff6600;
 
 li.hpb-sentiment {
     &.bullish {
@@ -28,5 +32,26 @@ li.hpb-sentiment {
         &.active {
             a {color: white; background-color: $hpb-color-neutral;}
         }
+    }
+}
+
+.hpb-github-link {
+    color: $hpb-color-github;
+    &:hover {
+        color: $hpb-color-github-hover;
+    }
+}
+
+.hpb-twitter-link {
+    color: $hpb-color-twitter;
+    &:hover {
+        color: darken($hpb-color-twitter, 10%);
+    }
+}
+
+.hpb-rss-link {
+    color: $hpb-color-rss;
+    &:hover {
+        color: darken($hpb-color-rss, 10%);
     }
 }

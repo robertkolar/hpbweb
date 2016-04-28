@@ -2,19 +2,30 @@
 <html>
 
 {% include head.html %}
-    <body>
-        {% include header.html %}
-        <div class="container">
-          <!-- Content -->
-          <div class="col-md-10" style="background-color: blue;">
-              {{ content }}
-          </div> <!-- End of Content -->
 
-          <!-- Sidebar -->
-          <div class="col-md-2" style="background-color: green;">
-            Test
-          </div> <!-- End of Sidebar -->
+<body>
+    {% include header.html %}
+    <div class="container">
+        <!-- Content -->
+        <div class="col-md-10" style="background-color: blue;">
+            {{ content }}
         </div>
-        {% include footer.html %}
-    </body>
+        <!-- End of Content -->
+
+        <!-- Sidebar -->
+        <div class="col-md-2" style="background-color: green;">
+            <!-- Social links -->
+            <div>
+                <h3>Follow me</h3>
+                <a href="https://github.com/highpowerbear" class="hpb-github-link"><i class="fa fa-github fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/highpowerbear" class="hpb-twitter-link"><i class="fa fa-twitter fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <a href="{{site.url}}/feed.xml" class="hpb-rss-link"><i class="fa fa-rss fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+            </div>
+            <!-- End of Social links -->
+        </div>
+        <!-- End of Sidebar -->
+    </div>
+    {% include footer.html %}
+</body>
+
 </html>
