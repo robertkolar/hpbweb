@@ -12,8 +12,10 @@ $hpb-color-neutral: gray;
 $hpb-color-github: #333;
 $hpb-color-github-hover: #4078c0;
 $hpb-color-twitter: #00aced;
+$hpb-color-email: #9E9E9E;
 $hpb-color-rss: #ff6600;
 $hpb-color-base-dark: #263238;
+$hpb-chart-width: 900px;
 
 li.hpb-sentiment {
     &.bullish {
@@ -50,6 +52,13 @@ li.hpb-sentiment {
     }
 }
 
+.hpb-email-link {
+    color: $hpb-color-email;
+    &:hover {
+        color: darken($hpb-color-email, 10%);
+    }
+}
+
 .hpb-rss-link {
     color: $hpb-color-rss;
     &:hover {
@@ -72,4 +81,15 @@ li.hpb-sentiment {
     height: 100px;
     background-color: $hpb-color-base-dark;
     border-radius: 100px;
+}
+
+.hpb-chart {
+    width: 90%;
+    max-width: $hpb-chart-width;
+}
+
+.hpb-footer {
+    color: white;
+    background-color: $hpb-color-base-dark;
+    height: 100px;
 }

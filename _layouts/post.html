@@ -40,7 +40,7 @@ layout: default
             {% capture chartimage-id %}chartimage-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}
             {% capture img-src %}{{chart-folder}}/{{symbol[0]}}_{{page.charts-ymd}}_{{page.default-interval}}.{{page.image-suffix}}{% endcapture %}
             <a id="{{chartlink-id}}" href="{{img-src}}" target="_blank" style="border-bottom-style: none;">
-                <img id="{{chartimage-id}}" src="{{img-src}}" title="Click to view high resolution chart" style="width: 100%;"/>
+                <img id="{{chartimage-id}}" src="{{img-src}}" class="hpb-chart" title="Click to view in separate window"/>
             </a>
         </div>
     {% endfor %}
