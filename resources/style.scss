@@ -1,3 +1,10 @@
+---
+# front matter needed for processing
+---
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "syntax-highlighting";
+
 .hpb-header {
     color: SlateGray;
     font-size: 16px;
