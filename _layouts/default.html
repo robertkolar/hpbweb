@@ -7,20 +7,29 @@
     {% include header.html %}
     <div class="container">
         <!-- Content -->
-        <div class="col-md-10" style="background-color: blue;">
+        <div class="col-md-10">
             {{ content }}
         </div>
         <!-- End of Content -->
 
         <!-- Sidebar -->
-        <div class="col-md-2" style="background-color: green;">
+        <div class="col-md-2">
             <!-- Social links -->
             <div>
-                <h3>Follow me</h3>
-                <a href="https://github.com/highpowerbear" class="hpb-github-link"><i class="fa fa-github fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
-                <a href="https://twitter.com/highpowerbear" class="hpb-twitter-link"><i class="fa fa-twitter fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
-                <a href="{{site.url}}/feed.xml" class="hpb-rss-link"><i class="fa fa-rss fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <h4>Follow me</h4>
+                <a href="https://github.com/highpowerbear" title="highpowerbear.com GitHub" target="_blank" class="hpb-github-link"><i class="fa fa-github fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/highpowerbear" title="highpowerbear.com Twitter" target="_blank" class="hpb-twitter-link"><i class="fa fa-twitter fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <a href="{{site.url}}/feed.xml" title="highpowerbear.com RSS" target="_blank" class="hpb-rss-link"><i class="fa fa-rss fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
             </div>
+            <!-- Recent posts -->
+            <div style="margin-top: 50px;">
+                <h4>Recent Posts</h4>
+
+                {% for post in site.posts limit:10 %}
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                {% endfor %}
+
+            </div> <!-- End of Recent posts -->
             <!-- End of Social links -->
         </div>
         <!-- End of Sidebar -->
