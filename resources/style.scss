@@ -13,6 +13,7 @@ $hpb-color-github: #333;
 $hpb-color-github-hover: #4078c0;
 $hpb-color-twitter: #00aced;
 $hpb-color-rss: #ff6600;
+$hpb-color-base-dark: #263238;
 
 li.hpb-sentiment {
     &.bullish {
@@ -54,4 +55,21 @@ li.hpb-sentiment {
     &:hover {
         color: darken($hpb-color-rss, 10%);
     }
+}
+
+.hpb-color-base-dark {
+    color: $hpb-color-base-dark;
+    &:hover {
+        color: $hpb-color-base-dark;
+        text-decoration: none;
+    }
+}
+
+.hpb-circle-glyphicon {
+    margin-top: 40px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: $hpb-color-base-dark;
+    border-radius: 100px;
 }

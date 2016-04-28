@@ -1,35 +1,81 @@
 ---
-layout: default
+layout: null
 ---
 
-<div>
+<!DOCTYPE html>
+<html>
 
-    <h1>Recent Posts</h1>
+{% include head.html %}
 
-    <div>
-        {% for post in site.posts limit:4 %}
-            {% capture chart-folder %}/charts/{{post.charts-ymd | slice: 0, 2}}/{{post.charts-ymd | slice: 2, 2}}/{{post.charts-ymd | slice: 4, 2}}{% endcapture %}
+<body>
+    {% include header.html %}
+    <div class="container">
+        <!-- Carousel -->
+        <div style="height:400px; background-color: grey;">
+        </div>
+        <!-- End of Carousel -->
 
-            <div style="float: left; margin-right: 10px;">
-                <a href="{{ post.url | prepend: site.baseurl }}"><span>{{ post.title }}</span></a>
-
-                <h2>
-                    <a href="{{ post.url | prepend: site.baseurl }}">
-                        <img src="{{chart-folder}}/{{post.thumb-image[0]}}_{{post.charts-ymd}}_{{post.thumb-image[1]}}.{{post.image-suffix}}" style="width: 200px; height: 140px;"/>
-                    </a>
-                </h2>
+        <!-- Highlighted pages -->
+        <div>
+            <!-- HPB Trader -->
+            <div class="col-md-4" style="text-align: center;">
+                <a href="/hpbtrader/" style="text-decoration: none;">
+                    <div class="hpb-circle-glyphicon">
+                        <i class="fa fa-cogs fa-3x" style="color: white; margin-top: 29px"></i>
+                    </div>
+                </a>
+                <a href="/hpbtrader/" style="text-decoration: none;">
+                    <h3 class="hpb-color-base-dark" style="font-weight: bold;">HPB Trader</h3>
+                </a>
+                <br>
+                <p style="text-align: center;">Algorithmic trading strategy execution platform, standalone or cloud hosted, designed for Interactive Brokers algo traders.</p>
+                <a href="/hpbtrader/" class="hpb-color-base-dark" style="font-weight: bold;">Architecture </a><i class="fa fa-caret-right hpb-color-base-dark" aria-hidden="true"></i>
             </div>
-            {% endfor %}
-            <div style="clear: left;"></div>
+            <!-- End of HPB Trader -->
+
+            <!-- HPB Signals -->
+            <div class="col-md-4" style="text-align: center;">
+                <a href="/hpbsignals/" style="text-decoration: none;">
+                    <div class="hpb-circle-glyphicon">
+                        <i class="fa fa-signal fa-3x" style="color: white; margin-top: 29px"></i>
+                    </div>
+                </a>
+                <a href="/hpbsignals/" style="text-decoration: none;">
+                    <h3 class="hpb-color-base-dark" style="font-weight: bold;">HPB Signals</h3>
+                </a>
+                <br>
+                <p style="text-align: center;">For traders who use Interactive Brokers TWS or IB Gateway platform and need to automatically enter IB trades as C2 signals into Collective2 platform.</p>
+                <a href="/hpbsignals/" class="hpb-color-base-dark" style="font-weight: bold;">More Info </a><i class="fa fa-caret-right hpb-color-base-dark" aria-hidden="true"></i>
+            </div>
+            <!-- End of HPB Signals -->
+
+            <!-- Market Outlook -->
+            <div class="col-md-4" style="text-align: center;">
+                <a href="/market-outlook/" style="text-decoration: none;">
+                    <div class="hpb-circle-glyphicon">
+                        <i class="fa fa-line-chart fa-3x" style="color: white; margin-top: 29px"></i>
+                    </div>
+                </a>
+                <a href="/market-outlook/" style="text-decoration: none;">
+                    <h3 class="hpb-color-base-dark" style="font-weight: bold;">Market Outlook</h3>
+                </a>
+                <br>
+                <p style="text-align: center;">Weekly market outlook for S&P 500, T-Bond, Gold, Crude Oil and Euro. 60 minutes, daily and weekly annotated charts.</p>
+                <a href="/market-outlook/" class="hpb-color-base-dark" style="font-weight: bold;">View Latest </a><i class="fa fa-caret-right hpb-color-base-dark" aria-hidden="true"></i>
+            </div>
+            <!-- End of Market Outlook -->
+
+
+
+        </div>
+        <!-- End of Highlighted pages -->
+
+        <!-- Recent Posts -->
+        <div>
+        </div>
+        <!-- End of Recent Posts -->
     </div>
+    {% include footer.html %}
+</body>
 
-    {% highlight java %}
-    public class HelloWorld {
-        public static void main(String[] args) {
-            System.out.println("Hello World!");
-        }
-    }
-    {% endhighlight %}
-
-    <p >subscribe <a href="{{ '/feed.xml' | prepend: site.baseurl }}">via RSS</a></p>
-</div>
+</html>
