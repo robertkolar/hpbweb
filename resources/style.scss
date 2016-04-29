@@ -46,6 +46,11 @@ body {
     }
 }
 
+.hpb-screenshots {
+    margin-top: 30px;
+    a { border-bottom-style: none; }
+}
+
 li.hpb-sentiment {
     &.bullish {
         a {color: $hpb-color-bullish;}
