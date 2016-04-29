@@ -5,7 +5,6 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
 
-
 $hpb-color-bullish: green;
 $hpb-color-bearish: red;
 $hpb-color-neutral: gray;
@@ -16,6 +15,36 @@ $hpb-color-email: #9E9E9E;
 $hpb-color-rss: #ff6600;
 $hpb-color-base-dark: #263238;
 $hpb-chart-width: 900px;
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 100px;
+}
+
+.hpb-footer {
+    color: #CFD8DC;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 100px;
+    background-color: $hpb-color-base-dark;
+    a { color: #ECEFF1; }
+    p { text-align: center; padding-top: 20px; }
+}
+
+.hpb-title {
+    color: lighten($hpb-color-base-dark, 20%);
+    a {
+        color: lighten($hpb-color-base-dark, 20%);
+        text-decoration: none;
+    }
+}
 
 li.hpb-sentiment {
     &.bullish {
@@ -86,10 +115,4 @@ li.hpb-sentiment {
 .hpb-chart {
     width: 90%;
     max-width: $hpb-chart-width;
-}
-
-.hpb-footer {
-    color: white;
-    background-color: $hpb-color-base-dark;
-    height: 100px;
 }

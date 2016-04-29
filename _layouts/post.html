@@ -3,15 +3,17 @@ layout: default
 ---
 
 <article>
-    <header>
-        <h1>{{ page.title }}</h1>
-        <p>
+    <header class="hpb-title">
+        <a href="{{site.url}}{{page.url}}" title="Permalink to {{page.title}}" rel="bookmark">
+            <h2>{{ page.title }}</h2>
+        </a>
+        <div>
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-            <span>{{ page.author }}</span>
-        </p>
+            <h5>- {{ page.author }}</h5>
+        </div>
     </header>
 
-    <div>
+    <div style="margin-top: 20px;">
         {{ content }}
     </div>
 
@@ -20,7 +22,7 @@ layout: default
     {% for symbol in page.symbols %}
         <div style="margin-bottom: 30px;">
             {% assign s = symbol[0] %}
-            <div style="margin-bottom: 20px;">{{site.symbols[s]}}</div>
+            <h4 style="margin-bottom: 20px;" class="hpb-title">{{site.symbols[s]}}</h4>
             <div style="margin-top: 0px; margin-bottom: 10px;">
                 <ul class="nav nav-pills">
                     {% for interval in symbol[1] %}
@@ -44,6 +46,4 @@ layout: default
             </a>
         </div>
     {% endfor %}
-
-    <div>Posted in {{page.category}} and tagged {% for tag in page.tags %}{{tag}}, {% endfor %}...</div>
 </article>

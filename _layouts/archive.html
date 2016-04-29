@@ -1,0 +1,13 @@
+---
+layout: page
+---
+
+<div>
+    {% assign archive-year = page.archive-year | upcase" %}
+    {% for post in site.posts %}
+    {% assign currentdate = post.date | date: "%Y" %}
+    {% if currentdate == archive-year %}
+    <div><a href="{{ post.url }}">{{ post.title }}</a></div>
+    {% endif %}
+    {% endfor %}
+</div>

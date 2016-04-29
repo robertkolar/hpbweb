@@ -5,7 +5,7 @@
 
 <body>
     {% include header.html %}
-    <div class="container">
+    <div class="container" style="padding-bottom: 50px;">
         <!-- Content -->
         <div class="col-md-10">
             {{ content }}
@@ -16,21 +16,43 @@
         <div class="col-md-2">
             <!-- Social links -->
             <div>
-                <h4>Follow me</h4>
-                <a href="https://github.com/highpowerbear" title="highpowerbear.com GitHub" target="_blank" class="hpb-github-link"><i class="fa fa-github fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
-                <a href="https://twitter.com/highpowerbear" title="highpowerbear.com Twitter" target="_blank" class="hpb-twitter-link"><i class="fa fa-twitter fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
-                <a href="{{site.url}}/feed.xml" title="highpowerbear.com RSS" target="_blank" class="hpb-rss-link"><i class="fa fa-rss fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <h4 class="hpb-title">Follow me</h4>
+                <a href="{{site.twitter}}" title="Twitter {{site.twitter}}" target="_blank" class="hpb-twitter-link"><i class="fa fa-twitter fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <a href="{{site.github}}" title="GitHub {{site.github}}" target="_blank" class="hpb-github-link"><i class="fa fa-github fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+                <a href="/feed.xml" title="RSS" target="_blank" class="hpb-rss-link"><i class="fa fa-rss fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
             </div>
+            <!-- End of Social links -->
+
+            <!-- Contact -->
+            <div style="margin-top: 30px;">
+                <h4 class="hpb-title">Contact</h4>
+                <a href="mailto:{{site.email}}" title="Email {{site.email}}" class="hpb-email-link" target="_blank"><i class="fa fa-envelope fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
+            </div>
+            <!-- End of Social links -->
+
             <!-- Recent posts -->
-            <div style="margin-top: 50px;">
-                <h4>Recent Posts</h4>
+            <div style="margin-top: 30px;">
+                <h4 class="hpb-title">Recent Posts</h4>
 
                 {% for post in site.posts limit:10 %}
                 <div><a href="{{ post.url }}">{{ post.title }}</a></div>
                 {% endfor %}
 
             </div> <!-- End of Recent posts -->
-            <!-- End of Social links -->
+
+            <!-- Yearly Archive posts -->
+            <div style="margin-top: 30px;">
+                <h4 class="hpb-title">Archive</h4>
+
+                {% for post in site.posts %}
+                {% assign currentdate = post.date | date: "%Y" %}
+                {% if currentdate != date %}
+                <div><a href="/archive/{{ currentdate }}">{{ currentdate }}</a></div>
+                {% assign date = currentdate %}
+                {% endif %}
+                {% endfor %}
+
+            </div> <!-- End of Yearly Archive posts -->
         </div>
         <!-- End of Sidebar -->
     </div>
