@@ -2,6 +2,11 @@
  * Created by robertk on 4/26/2016.
  */
 $(document).ready(function() {
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+
     $('.hpb-button').click(function () {
         Hpb.swapImage($(this).attr('id'));
     });
