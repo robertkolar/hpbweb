@@ -15,7 +15,6 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://highpowerbear.com" # the base hostname & protocol for your site
 permalink: /:categories/:short_year:month:day/
-url: "http://localhost:4000"
 defaults:
   -
     scope:
