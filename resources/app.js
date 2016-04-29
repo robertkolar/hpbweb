@@ -5,6 +5,8 @@ $(document).ready(function() {
     $('.hpb-button').click(function () {
         Hpb.swapImage($(this).attr('id'));
     });
+    Hpb.initCarousel();
+    Hpb.scrollTop();
 });
 
 var Hpb = (function() {
@@ -28,5 +30,41 @@ var Hpb = (function() {
         }).attr('src', imgSrc);
         return true;
     };
+    my.initCarousel = function() {
+        // Activate Carousel
+        $("#front-page-carousel").carousel();
+
+        // Enable Carousel Indicators
+        $(".item1").click(function() {
+            $("#front-page-carousel").carousel(0);
+        });
+        $(".item2").click(function() {
+            $("#front-page-carousel").carousel(1);
+        });
+
+        // Enable Carousel Controls
+        $(".left").click(function() {
+            $("#front-page-carousel").carousel("prev");
+        });
+        $(".right").click(function() {
+            $("#front-page-carousel").carousel("next");
+        });
+    }
+    my.scrollTop = function() {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+
+        $('.scrollup').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+    }
     return my;
 }());

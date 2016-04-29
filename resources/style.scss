@@ -14,6 +14,7 @@ $hpb-color-twitter: #00aced;
 $hpb-color-email: #9E9E9E;
 $hpb-color-rss: #ff6600;
 $hpb-color-base-dark: #263238;
+$hpb-color-base: #607D8B;
 $hpb-chart-width: 900px;
 
 html {
@@ -23,7 +24,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .hpb-footer {
@@ -32,7 +33,7 @@ body {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 100px;
+    height: 80px;
     background-color: $hpb-color-base-dark;
     a { color: #ECEFF1; }
     p { text-align: center; padding-top: 20px; }
@@ -120,4 +121,28 @@ li.hpb-sentiment {
 .hpb-chart {
     width: 90%;
     max-width: $hpb-chart-width;
+}
+
+/* Carousel indicators placed in bottom right corner */
+.carousel-indicators {
+    left: 92.5%;
+    margin-bottom: -1%;
+}
+
+/* No gap between menu and carousel */
+.navbar {
+    margin-bottom: 0px;
+}
+
+.scrollup {
+    cursor: pointer;
+    opacity: 0.75;
+    position: fixed;
+    display: none;
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+    right: 40px;
+    z-index:9;
+    color: $hpb-color-base;
 }
