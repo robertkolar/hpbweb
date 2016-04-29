@@ -9,7 +9,7 @@ layout: default
         </a>
         <div>
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-            <h5>- {{ page.author }}</h5>
+            <span>- {{ page.author }}</span>
         </div>
     </header>
 
@@ -41,9 +41,11 @@ layout: default
             {% capture chartlink-id %}chartlink-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}
             {% capture chartimage-id %}chartimage-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}
             {% capture img-src %}{{chart-folder}}/{{symbol[0]}}_{{page.charts-ymd}}_{{page.default-interval}}.{{page.image-suffix}}{% endcapture %}
-            <a id="{{chartlink-id}}" href="{{img-src}}" target="_blank" style="border-bottom-style: none;">
-                <img id="{{chartimage-id}}" src="{{img-src}}" class="hpb-chart" title="Click to view in lightbox"/>
-            </a>
+            <div class="hpb-screenshots">
+                <a id="{{chartlink-id}}" href="{{img-src}}" target="_blank" style="border-bottom-style: none;" data-toggle="lightbox" data-title="{{site.symbols[s]}}">
+                    <img id="{{chartimage-id}}" src="{{img-src}}" class="hpb-chart" title="Click to view in lightbox"/>
+                </a>
+            </div>
         </div>
     {% endfor %}
 </article>
