@@ -2,17 +2,16 @@
 layout: page
 ---
 
-<div>
-    {% assign archive-year = page.archive-year | upcase" %}
-    {% for post in site.posts %}
-    {% assign iyear = post.date | date: "%Y" %}
-    {% if iyear == archive-year %}
-        {% assign imonth = post.date | date: "%m" %}
-        {% if imonth != archive-month %}
-            <h4 class="hpb-title">{{post.date | date: "%B %Y"}}</h4>
-            {% assign archive-month = imonth %}
-        {% endif %}
-            <div><a href="{{ post.url }}">{{ post.title }}</a></div>
-    {% endif %}
-    {% endfor %}
+<div>{%
+    assign archive-year = page.archive-year | upcase" %}{%
+    for post in site.posts %}{%
+        assign iyear = post.date | date: "%Y" %}{%
+        if iyear == archive-year %}{%
+            assign imonth = post.date | date: "%m" %}{%
+            if imonth != archive-month %}
+                <h4 class="hpb-title">{{post.date | date: "%B %Y"}}</h4>{% assign archive-month = imonth %}{%
+            endif %}
+                <div><a href="{{ post.url }}">{{ post.title }}</a></div>{%
+        endif %}{%
+    endfor %}
 </div>

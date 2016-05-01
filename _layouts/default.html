@@ -37,24 +37,21 @@
 
             <!-- Recent posts -->
             <div style="margin-top: 25px;">
-                <h4 class="hpb-title">Recent Posts</h4>
-
-                {% for post in site.posts limit:10 %}
-                <div><a href="{{ post.url }}">{{ post.title }}</a></div>
-                {% endfor %}
+                <h4 class="hpb-title">Recent Posts</h4>{%
+                for post in site.posts limit:10 %}
+                    <div><a href="{{ post.url }}">{{ post.title }}</a></div>{%
+                endfor %}
             </div> <!-- End of Recent posts -->
 
             <!-- Yearly Archive posts -->
             <div style="margin-top: 25px;">
-                <h4 class="hpb-title">Archive</h4>
-
-                {% for post in site.posts %}
-                {% assign currentdate = post.date | date: "%Y" %}
-                {% if currentdate != date %}
-                <div><a href="/archive/{{ currentdate }}">{{ currentdate }}</a></div>
-                {% assign date = currentdate %}
-                {% endif %}
-                {% endfor %}
+                <h4 class="hpb-title">Archive</h4>{%
+                for post in site.posts %}{% assign currentdate = post.date | date: "%Y" %}{%
+                    if currentdate != date %}
+                        <div><a href="/archive/{{ currentdate }}">{{ currentdate }}</a></div>{%
+                        assign date = currentdate %}{%
+                    endif %}{%
+                endfor %}
             </div> <!-- End of Yearly Archive posts -->
         </div>
         <!-- End of Sidebar -->
