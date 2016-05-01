@@ -23,9 +23,9 @@ defaults:
     values:
       author: highpowerbear
       category: market
-      layout: post
+      layout: market-post
       default-interval: daily
-      image-suffix: "png"
+      image-suffix: png
 symbols: {
   SPY:  "SPY - S&P 500 ETF",
   TLT:  "TLT - Treasury Bond ETF",
@@ -44,3 +44,4 @@ symbols: {
 
 # Build settings
 markdown: kramdown
+future: true
