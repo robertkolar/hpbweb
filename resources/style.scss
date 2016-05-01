@@ -17,6 +17,17 @@ $hpb-color-base-dark: #263238;
 $hpb-color-base: #607D8B;
 $hpb-chart-width: 900px;
 
+/* Carousel indicators placed in bottom right corner */
+.carousel-indicators {
+    left: 92.5%;
+    margin-bottom: -1%;
+}
+
+/* No gap between menu and carousel */
+.navbar {
+    margin-bottom: 0px;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -37,6 +48,19 @@ body {
     background-color: $hpb-color-base-dark;
     a { color: #ECEFF1; }
     p { text-align: center; padding-top: 20px; }
+}
+
+.hpb-scrollup {
+    cursor: pointer;
+    opacity: 0.75;
+    position: fixed;
+    display: none;
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9;
+    color: $hpb-color-base;
 }
 
 .hpb-title {
@@ -121,28 +145,4 @@ li.hpb-sentiment {
 .hpb-chart {
     width: 90%;
     max-width: $hpb-chart-width;
-}
-
-/* Carousel indicators placed in bottom right corner */
-.carousel-indicators {
-    left: 92.5%;
-    margin-bottom: -1%;
-}
-
-/* No gap between menu and carousel */
-.navbar {
-    margin-bottom: 0px;
-}
-
-.scrollup {
-    cursor: pointer;
-    opacity: 0.75;
-    position: fixed;
-    display: none;
-    width: 40px;
-    height: 40px;
-    bottom: 40px;
-    right: 40px;
-    z-index:9;
-    color: $hpb-color-base;
 }

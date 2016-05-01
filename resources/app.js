@@ -11,11 +11,12 @@ $(document).ready(function() {
         Hpb.swapImage($(this).attr('id'));
     });
     Hpb.initCarousel();
-    Hpb.scrollTop();
+    Hpb.scrollUp();
 });
 
 var Hpb = (function() {
     var my = {};
+    
     my.swapImage = function(buttonId) {
         var els = buttonId.split('-'),
             symbol = els[1],
@@ -35,6 +36,7 @@ var Hpb = (function() {
         }).attr('src', imgSrc);
         return true;
     };
+    
     my.initCarousel = function() {
         // Activate Carousel
         $("#front-page-carousel").carousel();
@@ -54,22 +56,23 @@ var Hpb = (function() {
         $(".right").click(function() {
             $("#front-page-carousel").carousel("next");
         });
-    }
-    my.scrollTop = function() {
+    };
+    
+    my.scrollUp = function() {
         $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
-                $('.scrollup').fadeIn();
+                $('.hpb-scrollup').fadeIn();
             } else {
-                $('.scrollup').fadeOut();
+                $('.hpb-scrollup').fadeOut();
             }
         });
 
-        $('.scrollup').click(function () {
+        $('.hpb-scrollup').click(function () {
             $("html, body").animate({
                 scrollTop: 0
             }, 600);
             return false;
         });
-    }
+    };
     return my;
 }());

@@ -5,8 +5,10 @@
 
 <body>
     {% include header.html %}
-    <i class="fa fa-chevron-circle-up fa-5x scrollup" aria-hidden="true" title="Back To Top"></i>
-    <div class="container" style="padding-bottom: 50px;">
+
+    <i class="fa fa-chevron-circle-up fa-5x hpb-scrollup" aria-hidden="true" title="Back To Top"></i>
+
+    <div class="container" style="margin-top: 20px; padding-bottom: 50px;">
         <!-- Content -->
         <div class="col-md-10">
             {{ content }}
@@ -16,7 +18,7 @@
         <!-- Sidebar -->
         <div class="col-md-2">
             <!-- Social links -->
-            <div style="margin-top: 25px;">
+            <div style="margin-top: 5px;">
                 <h4 class="hpb-title">Follow me</h4>
                 <a href="{{site.twitter}}" title="Twitter {{site.twitter}}" target="_blank" class="hpb-twitter-link"><i class="fa fa-twitter fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
                 <a href="{{site.github}}" title="GitHub {{site.github}}" target="_blank" class="hpb-github-link"><i class="fa fa-github fa-3x" style="width: 30%;" aria-hidden="true"></i></a>
