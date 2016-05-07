@@ -23,7 +23,7 @@ var Hpb = (function() {
 
             var chartLinkId = 'chartlink-' + symbol + '-' + ymd;
             var chartImageId = 'chartimage-' + symbol + '-' + ymd;
-            var imgSrc = '/charts/' + ymd.substr(0, 2) + '/' + ymd.substr(2, 2) + '/' + ymd.substr(4, 2) + '/' + symbol + '_' + ymd + '_' + interval + '.' + suffix;
+            var imgSrc = '/charts/' + ymd + '/' + symbol + '_' + ymd + '_' + interval + '.' + suffix;
 
             $('#' + chartLinkId).attr('href', imgSrc);
             $('#' + chartImageId).on('load', function () {

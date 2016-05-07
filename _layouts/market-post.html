@@ -16,7 +16,7 @@ layout: default
     <div style="margin-top: 20px;">
         {{ content }}
     </div>{%
-    capture chart-folder %}/charts/{{page.charts-ymd | slice: 0, 2}}/{{page.charts-ymd | slice: 2, 2}}/{{page.charts-ymd | slice: 4, 2}}{% endcapture %}{%
+    capture chart-folder %}/charts/{{page.charts-ymd}}{% endcapture %}{%
     for symbol in page.symbols %}
         <div style="margin-bottom: 30px;">{%
             assign s = symbol[0] %}
