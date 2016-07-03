@@ -28,18 +28,20 @@ defaults:
       image-suffix: png
 symbols: {
   SPY:  "SPY - S&P 500 ETF",
+  IWM:  "IWM - Russell 2000 ETF",
+
+  EURUSD: "EURUSD - Euro to US Dollar",
+  AUDUSD: "AUDUSD - Australian Dollar to US Dollar",
+  GBPUSD: "GBPUSD - British Pound to US Dollar",
+  USDCAD: "USDCAD - US Dollar to Canadian Dollar",
+  USDJPY: "USDJPY - US Dollar to Japanese Yen",
+
   TLT:  "TLT - Treasury Bond ETF",
   GLD:  "GLD - Gold ETF",
   USO:  "USO - Crude Oil ETF",
   WTIC: "WTIC - Light Crude Oil Spot",
   FXE:  "FXE - Euro Currency ETF",
   DBA:  "DBA - Agriculture ETF",
-
-  EURUSD: "EURUSD - Euro to US Dollar",
-  AUDUSD: "AUDUSD - Australian Dollar to US Dollar",
-  GBPUSD: "GBPUSD - British Pound to US Dollar",
-  USDCAD: "USDCAD - US Dollar to Canadian Dollar",
-  USDJPY: "USDJPY - US Dollar to Japanese Yen"
 }
 
 # Build settings
