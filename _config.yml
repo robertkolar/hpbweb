@@ -31,10 +31,11 @@ symbols: {
   IWM:  "IWM - Russell 2000 ETF",
 
   EURUSD: "EURUSD - Euro to US Dollar",
-  AUDUSD: "AUDUSD - Australian Dollar to US Dollar",
   GBPUSD: "GBPUSD - British Pound to US Dollar",
-  USDCAD: "USDCAD - US Dollar to Canadian Dollar",
+  AUDUSD: "AUDUSD - Australian Dollar to US Dollar",
   USDJPY: "USDJPY - US Dollar to Japanese Yen",
+  USDCHF: "USDCHF - US Dollar to Swiss Franc",
+  USDCAD: "USDCAD - US Dollar to Canadian Dollar",
 
   TLT:  "TLT - Treasury Bond ETF",
   GLD:  "GLD - Gold ETF",
