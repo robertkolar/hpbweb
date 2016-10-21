@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+{% include header.html %}
+
+<i class="fa fa-chevron-circle-up fa-5x hpb-scrollup" aria-hidden="true" title="Back To Top"></i>
+
+<div class="container" style="margin-top: 20px; padding-bottom: 50px;">
+    <!-- Content -->
+    <div class="col-md-10">
+        {{ content }}
+    </div>
+    <!-- End of Content -->
+
+    <!-- Sidebar -->
+    <div class="col-md-2">
+        <!-- Recent posts -->
+        <div style="margin-top: 25px;">
+            <h4 class="hpb-title">Recent Posts</h4>{%
+            for post in site.posts limit:10 %}
+            <div><a href="{{ post.url }}">{{ post.title }}</a></div>{%
+            endfor %}
+        </div> <!-- End of Recent posts -->
+
+        <!-- Yearly Archive posts -->
+        <div style="margin-top: 25px;">
+            <h4 class="hpb-title">Archive</h4>{%
+            for post in site.posts %}{% assign currentdate = post.date | date: "%Y" %}{%
+            if currentdate != date %}
+            <div><a href="/archive/{{ currentdate }}">{{ currentdate }}</a></div>{%
+            assign date = currentdate %}{%
+            endif %}{%
+            endfor %}
+        </div> <!-- End of Yearly Archive posts -->
+    </div>
+    <!-- End of Sidebar -->
+</div>
+{% include footer.html %}
+</body>
+
+</html>
