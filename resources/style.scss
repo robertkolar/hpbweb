@@ -16,6 +16,10 @@ $hpb-color-base-200: #B0BEC5;
 
 $hpb-chart-width: 900px;
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Carousel indicators placed in bottom right corner */
 .carousel-indicators {
     left: 92.5%;
@@ -32,6 +36,7 @@ $hpb-chart-width: 900px;
 
 .carousel-caption p {
     font-size: 20px;
+    font-weight: 100;
 }
 
 @media screen and (min-width: 768px) {
