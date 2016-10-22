@@ -22,11 +22,6 @@ $hpb-chart-width: 900px;
     margin-bottom: -1%;
 }
 
-/* No gap between menu and carousel */
-.navbar {
-    margin-bottom: 0px;
-}
-
 html {
     position: relative;
     min-height: 100%;
@@ -116,6 +111,10 @@ li.hpb-sentiment {
 .hpb-chart {
     width: 90%;
     max-width: $hpb-chart-width;
+}
+
+.navbar {
+    margin-bottom: 0px;
 }
 
 .navbar-default {
