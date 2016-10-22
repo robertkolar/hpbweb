@@ -22,6 +22,30 @@ $hpb-chart-width: 900px;
     margin-bottom: -1%;
 }
 
+.carousel-caption {
+    text-align: center;
+    margin: auto;
+    top: 50%; transform:
+    translateY(-50%);
+    bottom: initial;
+}
+
+.carousel-caption p {
+    font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-caption p {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .carousel-caption p {
+        font-size: 80px;
+    }
+}
+
 html {
     position: relative;
     min-height: 100%;
