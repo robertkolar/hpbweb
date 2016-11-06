@@ -14,6 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Financial software solutions
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://highpowerbear.com" # the base hostname & protocol for your site
+chartsurl: "http://charts.highpowerbear.com"
 permalink: /:categories/:short_year:month:day/
 defaults:
   -
