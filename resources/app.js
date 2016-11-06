@@ -23,7 +23,7 @@ var Hpb = (function() {
 
             var chartLinkId = 'chartlink-' + symbol + '-' + ymd;
             var chartImageId = 'chartimage-' + symbol + '-' + ymd;
-            var imgSrc = '/charts/' + ymd + '/' + symbol + '_' + ymd + '_' + interval + '.' + suffix;
+            var imgSrc = 'http://charts.highpowerbear.com/' + ymd + '/' + symbol + '_' + ymd + '_' + interval + '.' + suffix;
 
             $('#' + chartLinkId).attr('href', imgSrc);
             $('#' + chartImageId).on('load', function () {
