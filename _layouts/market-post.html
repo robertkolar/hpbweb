@@ -16,7 +16,7 @@ layout: two-column
     <div style="margin-top: 20px;">
         {{ content }}
     </div>{%
-    capture charts-url %}{{site.chartsurl}}/{{page.charts-ymd}}{% endcapture %}{%
+    capture charts-url %}{{site.chartsurl}}/{{page.charts-ymd | slice: 0, 2}}/{{page.charts-ymd}}{% endcapture %}{%
     for symbol in page.symbols %}
         <div style="margin-bottom: 30px;">{%
             assign s = symbol[0] %}

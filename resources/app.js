@@ -19,11 +19,12 @@ var Hpb = (function() {
                 symbol = els[1],
                 ymd = els[2],
                 interval = els[3],
-                suffix = els[4];
+                suffix = els[4],
+                yy = ymd.substr(0, 1);
 
             var chartLinkId = 'chartlink-' + symbol + '-' + ymd;
             var chartImageId = 'chartimage-' + symbol + '-' + ymd;
-            var imgSrc = 'http://charts.highpowerbear.com/' + ymd + '/' + symbol + '_' + ymd + '_' + interval + '.' + suffix;
+            var imgSrc = 'http://charts.highpowerbear.com/' + yy + '/' + ymd + '/' + symbol + '_' + ymd + '_' + interval + '.' + suffix;
 
             $('#' + chartLinkId).attr('href', imgSrc);
             $('#' + chartImageId).on('load', function () {
