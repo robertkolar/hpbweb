@@ -20,7 +20,7 @@ var Hpb = (function() {
                 ymd = els[2],
                 interval = els[3],
                 suffix = els[4],
-                yy = ymd.substr(0, 1);
+                yy = ymd.substr(0, 2);
 
             var chartLinkId = 'chartlink-' + symbol + '-' + ymd;
             var chartImageId = 'chartimage-' + symbol + '-' + ymd;
