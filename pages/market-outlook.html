@@ -4,49 +4,8 @@ title: Market Outlook
 permalink: /market-outlook/
 ---
 
-{% assign page = site.posts.first %}
-
-<article>
-    <header class="hpb-title">
-        <a href="{{site.url}}{{page.url}}" title="Permalink to {{page.title}}" rel="bookmark">
-            <h2>{{ page.title }}</h2>
-        </a>
-        <div>
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-            <span>- {{ page.author }}</span>
-        </div>
-    </header>
-
-    <div style="margin-top: 20px;">
-    </div>{%
-    capture charts-url %}{{site.chartsurl}}/{{page.charts-ymd | slice: 0, 2}}/{{page.charts-ymd}}{% endcapture %}{%
-    for symbol in page.symbols %}
-        <div style="margin-bottom: 30px;">{%
-            assign s = symbol[0] %}
-            <h4 style="margin-bottom: 20px;" class="hpb-title">{{site.symbols[s]}}</h4>
-            <div style="margin-top: 0px; margin-bottom: 10px;">
-                <ul class="nav nav-pills">{%
-                    for interval in symbol[1] %}{%
-                        capture button-id %}button-{{symbol[0]}}-{{page.charts-ymd}}-{{interval[0]}}-{{page.image-suffix}}{% endcapture %}{%
-                        if interval[0] == page.default-interval %}{%
-                            assign isactive = 'active' %}{%
-                        else %}{%
-                            assign isactive = '' %}{%
-                        endif %}
-                        <li id="{{button-id}}" title="Click to view {{interval[0]}} chart" role="presentation" class="hpb-button hpb-sentiment {{interval[1]}} {{isactive}}">
-                            <a href="javascript:void(0);">{{interval[0]}}: {{interval[1]}}</a>
-                        </li>{%
-                    endfor %}
-                </ul>
-            </div>{%
-            capture chartlink-id %}chartlink-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}{%
-            capture chartimage-id %}chartimage-{{symbol[0]}}-{{page.charts-ymd}}{% endcapture %}{%
-            capture img-src %}{{charts-url}}/{{symbol[0]}}_{{page.charts-ymd}}_{{page.default-interval}}.{{page.image-suffix}}{% endcapture %}
-            <div class="hpb-screenshots">
-                <a id="{{chartlink-id}}" href="{{img-src}}" target="_blank" style="border-bottom-style: none;" data-toggle="lightbox" data-title="{{site.symbols[s]}}">
-                    <img id="{{chartimage-id}}" src="{{img-src}}" title="Click to view in lightbox" class="hpb-chart"/>
-                </a>
-            </div>
-        </div>{%
-    endfor %}
-</article>
+<div id="stocktwits-widget-news"></div><a href='http://stocktwits.com' style='font-size: 0px;'>StockTwits</a>
+<script type="text/javascript" src="https://stocktwits.com/addon/widget/2/widget-loader.min.js"></script>
+<script type="text/javascript">
+    STWT.Widget({container: 'stocktwits-widget-news', user: 'highpowerbear', width: '860', height: '1000', limit: '15', scrollbars: 'true', streaming: 'true', title: 'Market Outlook', style: {link_color: '4871a8', link_hover_color: '4871a8', header_text_color: '000000', border_color: 'cecece', divider_color: 'cecece', divider_color: 'cecece', divider_type: 'solid', box_color: 'f5f5f5', stream_color: 'ffffff', text_color: '000000', time_color: '999999'}});
+</script>
