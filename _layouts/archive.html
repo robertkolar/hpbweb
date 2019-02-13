@@ -3,7 +3,7 @@ layout: page
 ---
 
 <div>{%
-    assign archive-year = page.archive-year | upcase" %}{%
+    assign archive-year = page.archive-year | upcase %}{%
     for post in site.posts %}{%
         assign iyear = post.date | date: "%Y" %}{%
         if iyear == archive-year %}{%
