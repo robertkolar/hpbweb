@@ -5,16 +5,141 @@ permalink: /hpboptions/
 ---
 
 <div style="margin-bottom: 20px;">
-
+    Equity and index options trading decision support, risk management and execution platform. Risk metrics, option Greeks, delta hedging, execution algorithms, position tracking and option chains.
+    Connecting to Interactive Brokers <a href="https://www.interactivebrokers.co.uk/en/index.php?f=5041" target="_blank">IB API Gateway</a>.
 </div>
 
 <a href="/hpboptions/screenshots">Screenshots</a><br>
 
-<h3 style="margin-top: 50px;" class="hpb-title">Requirements</h3>
+<h3 class="hpb-title">Main Features</h3>
 <ul style="list-style-type: disc; margin-top: 0px; margin-left: 5px;">
-    <li>Requirement 1 TBD</li>
+    <li>Trading equity and index options on the exchanges around the world like USA, Europe, Asia</li>
+    <li>Optimized for options selling delta neutral strategies</li>
+    <li>Tick by tick calculation of all relevant risk metrics and option/portfolio Greeks</li>
+    <li>Custom implied volatility rank calculation</li>
+    <li>Compact web based UI presenting all information in a condensed form</li>
+    <li>Realtime update of all information utilizing message queues and websocket technologies</li>
+    <li>Predefined risk parameters per underlying like min/max delta, min/max gamma, max allocation, etc.</li>
+    <li>Automated delta hedging with the underlying security or equity/index CFDs</li>
+    <li>Placing opening/closing option orders from the UI with one click</li>
+    <li>Better fills by utilizing order execution algorithms</li>
+    <li>Position tracking and sorting by underlying or expiration</li>
+    <li>Option chains for the underlying updating on tick by tick basis</li>
+    <li>Connects to Interactive Brokers Gateway utilizing IB API</li>
 </ul>
-<h3 class="hpb-title">Features</h3>
-<ul style="list-style-type: disc; margin-top: 0px; margin-left: 5px;">
-    <li><span style="color: green;">Feature 1: </span>TBD</li>
-</ul>
+
+<h3 class="hpb-title">Fields Description</h3>
+
+<h4 class="hpb-title">Underlying</h4>
+<table class="table table-condensed" style="width: 40%;">
+    <tr><th>Underlying</th><td>symbol, security type and currency of the underlying instrument like stock/ETF or index</td></tr>
+    <tr><th>Dh</th><td>enable/disable automated delta hedging</td></tr>
+    <tr><th>P</th><td>current underlying/CFD position</td></tr>
+    <tr><th>Pl</th><td>profit/loss for the open CFD position</td></tr>
+    <tr><th>Bs</th><td>bid size</td></tr>
+    <tr><th>Bid</th><td>bid price</td></tr>
+    <tr><th>Ask</th><td>ask price</td></tr>
+    <tr><th>As</th><td>ask size</td></tr>
+    <tr><th>Last</th><td>last trade price</td></tr>
+    <tr><th>Ls</th><td>last trade size</td></tr>
+    <tr><th>Vlm</th><td>daily traded volume</td></tr>
+    <tr><th>Close</th><td>previous day closing price</td></tr>
+    <tr><th>Chg</th><td>daily price change percentage</td></tr>
+    <tr><th>OptIV</th><td>option implied volatility for the underlying</td></tr>
+    <tr><th>IvCh</th><td>daily implied volatility change</td></tr>
+    <tr><th>IvRk</th><td>implied volatility rank, 0-100</td></tr>
+    <tr><th>OptVm</th><td>option volume per underlying</td></tr>
+    <tr><th>OptOI</th><td>option open interest per underlying</td></tr>
+    <tr><th>p</th><td>number of open short put contracts per underlying</td></tr>
+    <tr><th>p</th><td>number of open long put contracts per underlying</td></tr>
+    <tr><th>c</th><td>number of open short call contracts per underlying</td></tr>
+    <tr><th>c</th><td>number of open long call contracts per underlying</td></tr>
+    <tr><th>D1p</th><td>portfolio delta per 1% price change of the underlying</td></tr>
+    <tr><th>G1p</th><td>portfolio gamma per 1% price change of the underlying</td></tr>
+    <tr><th>D</th><td>combined portfolio delta per underlying</td></tr>
+    <tr><th>G</th><td>combined portfolio gamma per underlying</td></tr>
+    <tr><th>V</th><td>combined portfolio vega per underlying</td></tr>
+    <tr><th>T</th><td>combined portfolio theta per underlying</td></tr>
+    <tr><th>Tv</th><td>sum of option positions time values per underlying</td></tr>
+    <tr><th>PnL</th><td>total unrealized profit/loss per underlying</td></tr>
+    <tr><th>Allc</th><td>allocation percentage calculated from the margin requirements of the open option positions</td></tr>
+</table>
+
+<h4 class="hpb-title">Orders</h4>
+<table class="table table-condensed" style="width: 40%;">
+    <tr><th>Sec</th><td>security type of the instrument traded, e.g. OPT, CFD</td></tr>
+    <tr><th>Und</th><td>underlying symbol</td></tr>
+    <tr><th>Symbol</th><td>symbol of the trading instrument</td></tr>
+    <tr><th>Expiration</th><td>option expiration date</td></tr>
+    <tr><th>R</th><td>option right, P - put, C - call</td></tr>
+    <tr><th>S</th><td>option strike</td></tr>
+    <tr><th>Bs</th><td>bid size</td></tr>
+    <tr><th>Bid</th><td>bid price</td></tr>
+    <tr><th>Ask</th><td>ask price</td></tr>
+    <tr><th>As</th><td>ask size</td></tr>
+    <tr><th>Last</th><td>last trade price</td></tr>
+    <tr><th>Ls</th><td>last trade size</td></tr>
+    <tr><th>OrdId</th><td>order id</td></tr>
+    <tr><th>Action</th><td>order action - BUY, SELL</td></tr>
+    <tr><th>Qnt</th><td>order quantity</td></tr>
+    <tr><th>Type</th><td>order type - LMT, MKT, STP</td></tr>
+    <tr><th>Lmt</th><td>order limit price in case of a limit order</td></tr>
+    <tr><th>Adpt</th><td>enable/disable adaptive order execution algo</td></tr>
+    <tr><th>Fill</th><td>order fill price</td></tr>
+    <tr><th>Src</th><td>order source, UM - underlying, PM - position, CM - chain, RDH - delta hedge, OOR - external</td></tr>
+    <tr><th>State</th><td>order state - New, Working, Completed</td></tr>
+    <tr><th>IB Status</th><td>order status as defined in com.ib.client.OrderStatus enum</td></tr>
+    <tr><th>PermId</th><td>unique order identifier</td></tr>
+    <tr><th>Hb</th><td>used in the order heartbeat check</td></tr>
+</table>
+
+<h4 class="hpb-title">Positions</h4>
+<table class="table table-condensed" style="width: 40%;">
+    <tr><th>Sec</th><td>security type of a position, e.g. OPT </td></tr>
+    <tr><th>Und</th><td>option underlying symbol</td></tr>
+    <tr><th>Symbol</th><td>option symbol</td></tr>
+    <tr><th>Expiration</th><td>option expiration date</td></tr>
+    <tr><th>R</th><td>option right, P - put, C - call</td></tr>
+    <tr><th>S</th><td>option strike</td></tr>
+    <tr><th>D</th><td>number of days until expiration</td></tr>
+    <tr><th>P</th><td>position size</td></tr>
+    <tr><th>Mrg</th><td>position margin requirement</td></tr>
+    <tr><th>PnL</th><td>unrealized profit/loss</td></tr>
+    <tr><th>Itm</th><td>option in-the-money (intrinsic) value</td></tr>
+    <tr><th>Tv</th><td>option time value</td></tr>
+    <tr><th>Tpct</th><td>annualized time value profit percentage (divided by strike)</td></tr>
+    <tr><th>Dlt</th><td>option position delta</td></tr>
+    <tr><th>Bs</th><td>bid size</td></tr>
+    <tr><th>Bid</th><td>bid price</td></tr>
+    <tr><th>Ask</th><td>ask price</td></tr>
+    <tr><th>As</th><td>ask size</td></tr>
+    <tr><th>Last</th><td>last trade price</td></tr>
+    <tr><th>Ls</th><td>last trade size</td></tr>
+    <tr><th>Volume</th><td>daily traded volume</td></tr>
+    <tr><th>Close</th><td>previous day closing price</td></tr>
+    <tr><th>Chg</th><td>daily price change percentage</td></tr>
+    <tr><th>ImpVol</th><td>option implied volatility (annual)</td></tr>
+    <tr><th>OpInt</th><td>option open interest</td></tr>
+</table>
+
+<h4 class="hpb-title">Chains</h4>
+<table class="table table-condensed" style="width: 40%;">
+    <tr><th>Strike</th><td>option strike price</td></tr>
+    <tr><th>Itm</th><td>option in-the-money (intrinsic) value</td></tr>
+    <tr><th>Tv</th><td>option time value</td></tr>
+    <tr><th>Tpct</th><td>annualized time value profit percentage (divided by strike)</td></tr>
+    <tr><th>Dlt</th><td>option instrument delta</td></tr>
+    <tr><th>Bs</th><td>bid size</td></tr>
+    <tr><th>Bid</th><td>bid price</td></tr>
+    <tr><th>Ask</th><td>ask price</td></tr>
+    <tr><th>As</th><td>ask size</td></tr>
+    <tr><th>Lst</th><td>last trade price</td></tr>
+    <tr><th>Ls</th><td>last trade size</td></tr>
+    <tr><th>Vlm</th><td>daily traded volume</td></tr>
+    <tr><th>Cls</th><td>previous day closing price</td></tr>
+    <tr><th>Chg</th><td>daily price change percentage</td></tr>
+    <tr><th>IV</th><td>option implied volatility (annual)</td></tr>
+    <tr><th>OI</th><td>option open interest</td></tr>
+</table>
+
+
