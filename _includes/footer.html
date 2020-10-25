@@ -1,7 +1,8 @@
 <footer class="hpb-footer">
     <div class="container">
         <p>
-            © 2010-2019 highpowerbear.com | <a href="mailto:{{site.email}}" target="_blank">Contact</a> | <a href="/disclaimer/">Disclaimer</a> | <a href="/cookie-policy/">Cookie policy</a>
+            © 2010-<span id="copyrightYear"></span> highpowerbear.com | <a href="/disclaimer/">Disclaimer</a> | <a href="/cookie-policy/">Cookie policy</a>
         </p>
     </div>
+    <script>document.getElementById('copyrightYear').innerHTML = new Date().getFullYear()</script>
 </footer>

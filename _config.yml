@@ -7,7 +7,7 @@
 
 # Site settings
 title: HighPowerBear
-email: info@highpowerbear.com
+email:
 github: https://github.com/robertkolar
 twitter: https://twitter.com/highpowerbear
 description: > # this means to ignore newlines until "baseurl:"
